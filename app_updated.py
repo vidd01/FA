@@ -22,7 +22,7 @@ st.set_page_config(
     layout="centered",
 )
 st.title('Financial Analytics Dashboard 📈')
-st.image('\stock_market.jpeg')
+#st.image('stock_market.jpg')
 
 value = "JPM"
 ticker = st.text_input('Enter Stock Ticker:', value=value).upper()
@@ -68,8 +68,8 @@ if selected_duration == "Custom Date":
     end_date = datetime.date.today()
 
 data=yf.download(ticker,start=start_date,end=end_date)
-# api_key = 'kR3pOO0UkPTyu5b4gq6pYCmk4tk8mga6' # Santhosh
-api_key = 'eUMyuzTsDHEK7kI8KYxpBbaVS9yxrF4P' # Rituraj
+# api_key = 'kR3pOO0UkPTyu5b4gq6pYCmk4tk8mga6' # 
+api_key = 'eUMyuzTsDHEK7kI8KYxpBbaVS9yxrF4P' #
 requestString = f"https://financialmodelingprep.com/api/v3/profile/{ticker}?apikey={api_key}"
 request = requests.get(requestString)
 json_data = request.json()
